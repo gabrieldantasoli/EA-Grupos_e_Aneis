@@ -6,10 +6,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Minigame estruturas algébricas</title>
+    <title>Minigame - estruturas algébricas</title>
 </head>
 <body>
+    <header>
+        <h1>header aqui</h1>
+    </header>
+
+    <main>
+        <div id="gameOptions">
+            <div class="game">Gamemode</div>
+            <div class="gamemode">
+                <div>
+                    <input type="radio" name="gamemode" id="multiplayer">
+                    <label for="multiplayer">Estático</label>
+                </div>
+                <div>
+                    <input type="radio" name="gamemode" id="singleplayer">
+                    <label for="singleplayer">Dinamico</label>
+                </div>
+            </div>
+            <div class="gamedificulty">
+                <div>
+                    <input type="radio" name="difilcuty" id="quatro" data-number="4" checked>
+                    <label for="quatro">4</label>
+                </div>
+                <div>
+                    <input type="radio" name="difilcuty" id="seis" data-number="5">
+                    <label for="seis">5</label>  
+                </div>
+                <div>
+                    <input type="radio" name="difilcuty" id="oito" data-number="6">
+                    <label for="oito">6</label>
+                </div>
+                <div>
+                    <input type="radio" name="difilcuty" id="dez" data-number="7">
+                    <label for="dez">7</label>
+                </div>
+                <div>
+                    <input type="radio" name="difilcuty" id="doze" data-number="8">
+                    <label for="doze">8</label>
+                </div>
+                
+            </div>
+            <button id="start" onclick="setTable()">Start</button>
+        </div> 
     
-    <script src=""></script>
+        <div id="tabela">
+
+        </div>
+    </main>
+
+    <footer>
+        <p>possivel footer aqui</p>
+    </footer>
+
+    <script src="scripts/mainScript.js"></script>
 </body>
 </html>
