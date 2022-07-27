@@ -15,11 +15,6 @@ function setTable(){
         divPai.removeChild(item);
     })
 
-    let divContainer = document.createElement("div");
-    divContainer.style.height = size + "%";
-    let div = document.createElement("div");
-    divContainer.appendChild(div);
-
     for (let a = 0; a <= tamanho; a++) {
         let divContainer = document.createElement("div");
         divContainer.style.height = size + "%";
