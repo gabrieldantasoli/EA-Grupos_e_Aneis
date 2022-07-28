@@ -7,6 +7,7 @@ function generateWindow(){
 function setTable(){
     document.querySelector("#gameOptions").style.display = "none";
     document.querySelector("#tabela").style.display = "block";
+    document.querySelector("#menu").style.display = "flex";
 
     let tamanho = document.querySelector(".gamedificulty input[type='radio']:checked").getAttribute("data-number");
     let size = 100 / tamanho;
@@ -36,7 +37,6 @@ function setTable(){
 
 //Adicionando imagens na tabela e no menu de frutas .
 function setImages(){
-    document.querySelector("#menu").style.display = "flex";
     const images = ["images/banana.png", "images/cereja.png", "images/laranja.png", "images/maca.png", "images/macaVerde.png", "images/manga.png", "images/melancia.png", "images/nozes.png", "images/pera.png", "images/tomate.png", "images/umbu.png", "images/uva.png"];
     images.sort(()=> Math.random() - 0.5);
     let imgContainers = document.querySelectorAll(".imgContainer");
