@@ -1,6 +1,7 @@
 function generateWindow(){
     setTable();
     setImages();
+    animateMenu();
 }
 
 //Criando a tabela das frutas .
@@ -16,6 +17,7 @@ function setTable(){
     divs.forEach(item => {
         divPai.removeChild(item);
     })
+    initGame(tamanho);
 
     for (let a = 0; a <= tamanho; a++) {
         let divContainer = document.createElement("div");
@@ -25,6 +27,7 @@ function setTable(){
             let div = document.createElement("div");
             if (b > 0) {
                 div.setAttribute("class", "divFruta");
+                div.setAttribute("onclick", `checkMove(${a}, ${b})`);
             }
             if((b == 0 && a != 0) || (a == 0 && b != 0)){
                 div.setAttribute("class", "imgContainer")
@@ -58,26 +61,20 @@ function setImages(){
     for (let a = 0; a < tamanho; a++) {
         let img = document.createElement("img");
         img.style.width = 100 / tamanho + "%";
-        img.setAttribute("class",`${images[a % tamanho].replace("images/"," ")}`)
-        img.setAttribute("src", images[a % tamanho]);
+        img.setAttribute("class",`${images[a].replace("images/"," ")}`)
+        img.setAttribute("value", `${a}`)
+        img.setAttribute("src", images[a]);
         menu.appendChild(img);
     }
 }
 
-document.querySelector("#menu").addEventListener("click",(e) => {
-    let images = document.querySelectorAll("#menu img");
-    images.forEach(item => {
-        item.classList.remove("active");
+function animateMenu(){
+    document.querySelector("#menu").addEventListener("click",(e) => {
+        let images = document.querySelectorAll("#menu img");
+        images.forEach(item => {
+            item.classList.remove("active");
+        })
+        e.target.classList.add("active");
     })
-    e.target.classList.add("active");
-})
 
-document.querySelector("#tabela").addEventListener("click",(e) => {
-    if (e.target.classList == "divFruta" && document.querySelector("#menu .active")) {
-        e.target.innerHTML = ""
-        let img = document.createElement("img");
-        img.setAttribute("class", "imgIcon");
-        img.setAttribute("src", document.querySelector("#menu .active").src);
-        e.target.appendChild(img)
-    }
-})
+}
