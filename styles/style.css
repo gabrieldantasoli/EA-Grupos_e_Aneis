@@ -20,9 +20,6 @@
 body{
     width: 100vw;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 /* estilo do header começa aqui */
@@ -31,7 +28,6 @@ header{
     width: 100%;
     background-color: var(--black);
     padding: 0.5rem 2rem;
-    position: fixed;
     top: 0;left: 0;
 }
 header h1{
@@ -45,7 +41,8 @@ header h1{
     width: 90vw;
     max-width: 350px;
     margin: auto;
-    border: 2px solid var(--black);
+    margin-top: 3rem;
+    outline: 2px solid var(--black);
     border-radius: 2rem;
 }
 #gameOptions button{
@@ -83,15 +80,17 @@ header h1{
 
 /* estilo do gamemode termina aqui */
 
-/* estilo da tabela começa aqui */
+/* estilo da tabela e menu começa aqui */
 #tabela{
     width: 90vw;
     aspect-ratio: 1/1;
     max-width: 350px;
     margin: auto;
+    margin-top: 2rem;
     position: relative;
     display: none;
     border: 2px solid black;
+    user-select: none;
 }
 #tabela > div{
     display: flex;
@@ -113,9 +112,28 @@ header h1{
     height: 90%;
     width: 90%;
     margin-top: 5%;
+    user-select: none;
+    pointer-events: none;
 }
 
-/* estilo da tabela termina aqui */
+#menu {
+    width: 90vw;
+    max-width: 350px;
+    margin: auto;
+    margin-top: 1rem;
+    border: 2px solid var(--black);
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+#menu img{
+    opacity: 0.4;
+}
+#menu img.active{
+    opacity: 1;
+}
+
+/* estilo da tabela e menu termina aqui */
 
 /* estilo do footer começa aqui */
 
@@ -130,4 +148,3 @@ footer p{
     color: var(--white);
 }
 /* estilo do footer termina aqui */
-
