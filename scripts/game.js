@@ -32,18 +32,18 @@ function checkMove(x, y){
 
 function playFailSong(){
     let failSong = new Audio();
-    failSong.src = '../audios/errou.mp3'
+    failSong.src = './audios/errou.mp3'
     failSong.play();
 }
 
 function playSucessSong(){
     let sucessSong = new Audio();
-    sucessSong.src = '../audios/acertou.mp3'
+    sucessSong.src = './audios/acertou.mp3'
     sucessSong.play()
 }
 
 function playWindSound(){
     let winSong = new Audio();
-    winSong.src = '../audios/ganhou.mp3'
+    winSong.src = './audios/ganhou.mp3'
     winSong.play()
 }
