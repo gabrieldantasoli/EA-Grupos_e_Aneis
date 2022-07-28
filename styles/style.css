@@ -104,6 +104,17 @@ header h1{
     width: 100%;
     outline: 1px solid black;
 }
+
+.imgContainer{
+    position: relative;
+}
+
+.imgIcon{
+    height: 90%;
+    width: 90%;
+    margin-top: 5%;
+}
+
 /* estilo da tabela termina aqui */
 
 /* estilo do footer começa aqui */
