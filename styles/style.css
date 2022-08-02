@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 :root{
     --black: #000;
     --white: #fff;
+    --red: #f25c5c86;
+    --darkRed: #d83f3f85;
+    --green: #5fbf32b6;
+    --darkGreen: #53af25b7;
+    --yellow: #ffc850b0;
+    --darkYellow: #feb744ab;
+    --gamemode: #53af25;
 }
 
 *{
@@ -17,37 +25,127 @@
     text-align: center;
 }
 
+html,body{
+    overflow-x: none;
+}
+
 body{
     width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* estilo do header começa aqui */
-
-header{
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
     width: 100%;
-    background-color: var(--black);
-    padding: 0.5rem 2rem;
-    top: 0;left: 0;
+    padding: 1.5rem;
 }
-header h1{
-    color: var(--white);
+/* estilo do header começa aqui */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: var(--white);
+    padding: 0.5rem 3rem;
+    box-shadow: 0 2px 2px var(--red), 0 5px 5px var(--red), 0 10px 10px var(--red);
+    animation: shadow infinite 21s ease-in-out;
+}
+header #logo{
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+header #logo p{
+    font-size: 1.5em;
+}
+header img{
+    width: 40%;
+    max-width: 50px;
 }
 
+header nav{
+    display: flex;
+    gap: 3rem;
+}
+header nav a{
+    font-size: large;
+    position: relative;
+    z-index: 1;
+}
+header nav a:hover:before{
+    content: "";
+    position: absolute;
+    bottom: 0;left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--darkGreen);
+    z-index: 0;
+}
+
+@keyframes shadow {
+    0%{
+        box-shadow: 0 2px 2px var(--red), 0 5px 5px var(--red), 0 10px 10px var(--red);
+    }
+    16.7%{
+        box-shadow: 0 2px 2px var(--darkRed), 0 5px 5px var(--darkRed), 0 10px 10px var(--darkRed);
+    }
+    33.3%{
+        box-shadow: 0 2px 2px var(--green), 0 5px 5px var(--green), 0 10px 10px var(--green);
+    }
+    50%{
+        box-shadow: 0 2px 2px var(--darkGreen), 0 5px 5px var(--darkGreen), 0 10px 10px var(--darkGreen);
+    }
+    67.7%{
+        box-shadow: 0 2px 2px var(--yellow), 0 5px 5px var(--yellow), 0 10px 10px var(--yellow);
+    }
+    83.5%{
+        box-shadow: 0 2px 2px var(--darkYellow), 0 5px 5px var(--darkYellow), 0 10px 10px var(--darkYellow);
+    }
+}
+
+@media (max-width: 600px){
+    header{
+        padding: 0.5rem 1rem;
+    }
+    header nav{
+        gap: 0.6rem;
+    }
+}
+@media (max-width: 500px){
+    header{
+        flex-direction: column;
+    }
+    header nav{
+        gap: 3rem;
+        margin-top: 0.5rem;
+    }
+}
 /* estilo do header termina aqui */ 
 
 /* estilo do gamemode começa aqui */
+game,label div,button{
+    transition: 1s;
+}
+#gameOption *{
+    transition: 2s;
+}
 #gameOptions{
     width: 90vw;
     max-width: 350px;
     margin: auto;
-    margin-top: 3rem;
     outline: 2px solid var(--black);
     border-radius: 2rem;
+    animation: gamemodeColor infinite 21s ease-in-out;
 }
 #gameOptions button{
-    color: yellow;
-    background-color: var(--black);
+    color: var(--black);
+    background-color: var(--gamemode);
     font-size: 1.5em;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
@@ -58,8 +156,8 @@ header h1{
 }
 .game{
     width: calc(100% + 2px);
-    background-color: var(--black);
-    color: yellow;
+    background-color: var(--gamemode);
+    color: var(--black);
     font-size: 3em;
     padding: 1rem 0;
     border-radius: 2rem 2rem 0 0;
@@ -75,7 +173,45 @@ header h1{
     font-size: 1.5em;
 }
 .gamemode label{
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
     font-size: 2em;
+    color: black;
+}
+.gamemode input,.gamedificulty input{
+    display: none;
+}
+label div{
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--gamemode);
+    border-radius: 7px;
+}
+input[type="radio"]:checked ~ label div{
+    background-color: var(--gamemode);
+}
+
+
+@keyframes gamemodeColor {
+    0%{
+        --gamemode:#f25c5c;
+    }
+    16.7%{
+        --gamemode:#d83f3f;
+    }
+    33.3%{
+        --gamemode:#5fbf32;
+    }
+    50%{
+        --gamemode:#53af25;
+    }
+    66.7%{
+        --gamemode:#ffc850;
+    }
+    83.7%{
+        --gamemode:#feb744;    
+    }
 }
 
 /* estilo do gamemode termina aqui */
@@ -86,11 +222,11 @@ header h1{
     aspect-ratio: 1/1;
     max-width: 350px;
     margin: auto;
-    margin-top: 2rem;
     position: relative;
     display: none;
     border: 2px solid black;
     user-select: none;
+    margin-bottom: 1rem;
 }
 #tabela > div{
     display: flex;
@@ -102,6 +238,9 @@ header h1{
     height: 100%;
     width: 100%;
     outline: 1px solid black;
+}
+#tabela > div > div:nth-child(1){
+    background-color: rgb(128,128,128);
 }
 
 .imgContainer{
@@ -131,6 +270,37 @@ header h1{
 }
 #menu img.active{
     opacity: 1;
+}
+
+#game{
+    display: none;
+    position: relative;
+    border: 3px solid #f25c5c;
+    padding: 1rem;
+    transition: 1s;
+    border-radius: 25px;
+    animation: changeColor 21s infinite ease-in-out;
+}
+
+@keyframes changeColor {
+    0%{
+        border: 3px solid #f25c5c;
+    }
+    16.7%{
+        border: 3px solid #d83f3f;
+    }
+    33.3%{
+        border: 3px solid #5fbf32;
+    }
+    50%{
+        border: 3px solid #53af25;
+    }
+    66.7%{
+        border: 3px solid #ffc850;
+    }
+    83.7%{
+        border: 3px solid #feb744;
+    }
 }
 
 /* estilo da tabela e menu termina aqui */

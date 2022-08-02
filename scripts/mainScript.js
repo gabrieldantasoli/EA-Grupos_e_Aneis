@@ -9,6 +9,8 @@ function setTable(){
     document.querySelector("#gameOptions").style.display = "none";
     document.querySelector("#tabela").style.display = "block";
     document.querySelector("#menu").style.display = "flex";
+    document.querySelector("#game").style.display = "block";
+
 
     let tamanho = document.querySelector(".gamedificulty input[type='radio']:checked").getAttribute("data-number");
     let size = 100 / tamanho;
@@ -30,7 +32,9 @@ function setTable(){
                 div.setAttribute("onclick", `checkMove(${a}, ${b})`);
             }
             if((b == 0 && a != 0) || (a == 0 && b != 0)){
-                div.setAttribute("class", "imgContainer")
+                div.setAttribute("class", "imgContainer");
+                div.style.background = "rgb(128,128,128)";
+                div.style.zIndex=-1;
             }
             divContainer.appendChild(div);
         }
