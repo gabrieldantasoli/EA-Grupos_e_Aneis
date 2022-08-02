@@ -2,6 +2,7 @@ function generateWindow(){
     setTable();
     setImages();
     animateMenu();
+    initGame(Number(document.querySelector(".gamedificulty input[type='radio']:checked").getAttribute("data-number")));
 }
 
 //Criando a tabela das frutas .
@@ -19,7 +20,6 @@ function setTable(){
     divs.forEach(item => {
         divPai.removeChild(item);
     })
-    initGame(Number(tamanho));
 
     for (let a = 0; a <= tamanho; a++) {
         let divContainer = document.createElement("div");

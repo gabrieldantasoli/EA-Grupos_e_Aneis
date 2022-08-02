@@ -5,9 +5,10 @@ let nums = new Array(boardSize)
 
 function initGame(size){
     boardSize = size
-    toDiscover = size ** 2
+    toDiscover = size ** 2 / 2
     
     generateOperation()
+    fillInitialValues()
 }
 
 function generateOperation(){
@@ -19,13 +20,28 @@ function generateOperation(){
     for (let i = 0; i < boardSize; i++){
         generatorRep[nums[i]] = i + 1
     }
-    
+}
+
+function fillInitialValues(){
+    for(let i = 0; i < toDiscover; i++){
+        let divs = document.querySelectorAll('#tabela > div');
+        let x = Math.floor(Math.random() * boardSize + 1)
+        let y = Math.floor(Math.random() * boardSize + 1);
+        let square = divs[x].childNodes[y]
+        while(square.childNodes.length > 0){
+            x = Math.floor(Math.random() * boardSize + 1)
+            y = Math.floor(Math.random() * boardSize + 1);
+            square = divs[x].childNodes[y]
+        }
+
+        fillSquare(x, y);
+    }
+
 }
 
 function checkMove(x, y){
     let divs = document.querySelectorAll('#tabela > div');
-    let row = divs[x]
-    let square = row.childNodes[y]
+    let square = divs[x].childNodes[y]
     let selectedImg = document.querySelector("#menu .active")
 
     if(!selectedImg) return;
@@ -38,13 +54,23 @@ function checkMove(x, y){
         return;
     }
 
+    fillSquare(x, y);
+    playSucessSong()
+    toDiscover--;
+    if(toDiscover == 0) playWindSound()
+}
+
+function fillSquare(x, y){
+    let divs = document.querySelectorAll('#tabela > div');
+    let square = divs[x].childNodes[y]
+
+    let reps = generatorRep[x - 1] + generatorRep[y - 1]
+    if(reps > boardSize) reps -= boardSize
+    let selectedImg = document.querySelector("#menu").childNodes[nums[reps - 1] + 1];
     let img = document.createElement("img");
     img.setAttribute("class", "imgIcon");
     img.setAttribute("src", `images/${selectedImg.classList[0]}`);
     square.appendChild(img);
-    playSucessSong()
-    toDiscover--;
-    if(toDiscover == 0) playWindSound()
 }
 
 function playFailSong(){
