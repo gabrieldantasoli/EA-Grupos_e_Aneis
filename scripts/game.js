@@ -5,7 +5,7 @@ let nums = new Array(boardSize)
 
 function initGame(size){
     boardSize = size
-    toDiscover = size ** 2 / 2
+    toDiscover = size ** 2
     
     generateOperation()
     fillInitialValues()
@@ -23,7 +23,7 @@ function generateOperation(){
 }
 
 function fillInitialValues(){
-    for(let i = 0; i < toDiscover; i++){
+    for(let i = 0; i < Math.floor(toDiscover / 2); i++){
         let divs = document.querySelectorAll('#tabela > div');
         let x = Math.floor(Math.random() * boardSize + 1)
         let y = Math.floor(Math.random() * boardSize + 1);
@@ -37,6 +37,7 @@ function fillInitialValues(){
         fillSquare(x, y);
     }
 
+    toDiscover -= Math.floor(toDiscover / 2)
 }
 
 function checkMove(x, y){
