@@ -17,7 +17,7 @@ function setTable(){
     divs.forEach(item => {
         divPai.removeChild(item);
     })
-    initGame(tamanho);
+    initGame(Number(tamanho));
 
     for (let a = 0; a <= tamanho; a++) {
         let divContainer = document.createElement("div");
