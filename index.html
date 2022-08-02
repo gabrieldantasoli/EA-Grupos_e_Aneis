@@ -10,7 +10,16 @@
 </head>
 <body>
     <header>
-        <h1>header aqui</h1>
+        <div id="logo">
+            <img src="images/logo.png" alt="logo">
+            <p>Fruit Alchemist</p>
+        </div>
+        <nav>
+            <a target="_blank" href="comoJogar.html">Como Jogar</a>
+            <a target="_blank" rel="noFollow" href="https://github.com/gabrieldantasoli/EA-Grupos_e_Aneis">Projeto do jogo</a>
+        </nav>
+
+        
     </header>
 
     <main>
@@ -18,34 +27,34 @@
             <div class="game">Gamemode</div>
             <div class="gamemode">
                 <div>
-                    <input type="radio" name="gamemode" id="multiplayer">
-                    <label for="multiplayer">Estático</label>
+                    <input type="radio" name="gamemode" id="estatico">
+                    <label for="estatico"><div></div>Estático</label>
                 </div>
                 <div>
-                    <input type="radio" name="gamemode" id="singleplayer">
-                    <label for="singleplayer">Dinamico</label>
+                    <input type="radio" name="gamemode" id="dinamico" checked>
+                    <label for="dinamico"><div></div>Dinamico</label>
                 </div>
             </div>
             <div class="gamedificulty">
                 <div>
                     <input type="radio" name="difilcuty" id="quatro" data-number="4" checked>
-                    <label for="quatro">4</label>
+                    <label for="quatro"><div></div>4</label>
                 </div>
                 <div>
                     <input type="radio" name="difilcuty" id="seis" data-number="5">
-                    <label for="seis">5</label>  
+                    <label for="seis"><div></div>5</label>  
                 </div>
                 <div>
                     <input type="radio" name="difilcuty" id="oito" data-number="6">
-                    <label for="oito">6</label>
+                    <label for="oito"><div></div>6</label>
                 </div>
                 <div>
                     <input type="radio" name="difilcuty" id="dez" data-number="7">
-                    <label for="dez">7</label>
+                    <label for="dez"><div></div>7</label>
                 </div>
                 <div>
                     <input type="radio" name="difilcuty" id="doze" data-number="8">
-                    <label for="doze">8</label>
+                    <label for="doze"><div></div>8</label>
                 </div>
                 
             </div>
@@ -68,5 +77,6 @@
 
     <script src="scripts/mainScript.js"></script>
     <script src="scripts/game.js"></script>
+    <script src="scripts/windowEvents.js"></script>
 </body>
 </html>
