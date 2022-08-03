@@ -10,7 +10,7 @@
     --darkGreen: #53af25b7;
     --yellow: #ffc850b0;
     --darkYellow: #feb744ab;
-    --gamemode: #53af25;
+    --gamemode: ;
 }
 
 *{
@@ -113,6 +113,9 @@ header nav a:hover:before{
     83.5%{
         background-color: #ffc850;
     }
+    100%{
+        background-color: #f25c5c;
+    }
 }
 @keyframes shadow {
     0%{
@@ -132,6 +135,9 @@ header nav a:hover:before{
     }
     83.5%{
         box-shadow: 0 2px 2px var(--darkYellow), 0 5px 5px var(--darkYellow), 0 10px 10px var(--darkYellow);
+    }
+    100%{
+        box-shadow: 0 2px 2px var(--red), 0 5px 5px var(--red), 0 10px 10px var(--red);
     }
 }
 
@@ -238,6 +244,9 @@ input[type="radio"]:checked ~ label div{
     83.7%{
         --gamemode:#feb744;    
     }
+    100%{
+        --gamemode:#f25c5c;
+    }
 }
 
 /* estilo do gamemode termina aqui */
@@ -326,6 +335,9 @@ input[type="radio"]:checked ~ label div{
     }
     83.7%{
         border: 3px solid #feb744;
+    }
+    100%{
+        border: 3px solid #f25c5c;   
     }
 }
 
