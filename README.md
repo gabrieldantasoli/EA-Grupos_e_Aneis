@@ -8,6 +8,6 @@
 <h3>HTML 5</h3>
 <h3>CSS 3</h3>
 <h3>JavaScript</h3>
-<h2>## 📁 Acesso ao projeto</h2>
-Você pode acessar o projeto desenvolvido até o momento clicando [aqui](https://gabrieldantasoli.github.io/EA-Grupos_e_Aneis/)
-Você pode acessar os arquivos do projeto clicando [aqui](https://github.com/gabrieldantasoli/EA-Grupos_e_Aneis).
+<h2>📁 Acesso ao projeto</h2>
+Você pode acessar o projeto desenvolvido até o momento clicando <a src="https://gabrieldantasoli.github.io/EA-Grupos_e_Aneis/">aqui</a>
+Você pode acessar os arquivos do projeto clicando <a src="https://github.com/gabrieldantasoli/EA-Grupos_e_Aneis">aqui</a>
