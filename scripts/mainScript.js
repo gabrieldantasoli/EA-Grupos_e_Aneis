@@ -11,8 +11,14 @@ function setTable(){
     document.querySelector("#tabela").style.display = "block";
     document.querySelector("#menu").style.display = "flex";
     document.querySelector("#game").style.display = "block";
+
     document.querySelector("header button").style.display = "block";
 
+    let gamemode = document.querySelector(".gamemode input[type='radio']:checked").id;
+    if (gamemode == "dinamico") {
+        document.body.classList.add("dinamico");
+    }
+    if (document.body.classList[0] == "dinamico") document.querySelector("#lifes").style.display = "block";
 
     let tamanho = document.querySelector(".gamedificulty input[type='radio']:checked").getAttribute("data-number");
     let size = 100 / tamanho;

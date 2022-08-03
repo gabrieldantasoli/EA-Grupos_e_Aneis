@@ -1,5 +1,6 @@
 let toDiscover = 0
 let boardSize = 0
+let vidas = 5;
 let generatorRep = new Array(boardSize)
 let nums = new Array(boardSize)
 
@@ -52,6 +53,14 @@ function checkMove(x, y){
     if(reps > boardSize) reps -= boardSize
     if(nums[reps - 1] != Number(selectedImg.attributes.value.nodeValue)){
         playFailSong()
+        if (document.body.classList == "dinamico") {
+            vidas -= 1;
+            document.querySelectorAll("#lifes img")[vidas].style.background = "white";
+        }  
+        if (vidas == 0 && document.body.classList == "dinamico") {
+            document.querySelector("#tabela").style.pointerEvents = "none";
+            fixTable();
+        }
         return;
     }
 
@@ -96,6 +105,16 @@ function playWindSound(){
 }
 
 function fixTable() {
-    let size = document.querySelectorAll("#tabela > div").length;
-    alert(size)
+    let size = document.querySelectorAll("#tabela > div").length - 1;
+    for (let a = 1; a <= size; a++) {
+        for (let b = 1; b <= size; b++){
+            let div = document.querySelectorAll("#tabela > div")[a].querySelectorAll("div")[b]
+            if (div.innerHTML == ""){
+                div.style.background = "rgba(207, 31, 31, 0.5)";
+                fillSquare(a,b);
+            }else{
+                div.style.background = "rgba(31, 207, 31, 0.5)";
+            }
+        }
+    }
 }
