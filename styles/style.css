@@ -188,7 +188,7 @@ header nav a:hover:before{
 }
 .game{
     width: calc(100% + 2px);
-    background: var(--gamemode);
+    background-color: var(--gamemode);
     color: var(--black);
     font-size: 3em;
     padding: 1rem 0;
@@ -227,25 +227,25 @@ input[type="radio"]:checked ~ label div{
 
 @keyframes gamemodeColor {
     0%{
-        --gamemode:#f25c5c;
+        --gamemode: #f25c5c;
     }
     16.7%{
-        --gamemode:#d83f3f;
+        --gamemode: #d83f3f;
     }
     33.3%{
-        --gamemode:#5fbf32;
+        --gamemode: #5fbf32;
     }
     50%{
-        --gamemode:#53af25;
+        --gamemode: #53af25;
     }
     66.7%{
-        --gamemode:#ffc850;
+        --gamemode: #ffc850;
     }
     83.7%{
-        --gamemode:#feb744;    
+        --gamemode: #feb744;    
     }
     100%{
-        --gamemode:#f25c5c;
+        --gamemode: #f25c5c;
     }
 }
 
