@@ -13,6 +13,7 @@ function initGame(size){
     
     generateOperation()
     fillInitialValues()
+    updateTime()
 }
 
 function generateOperation(){
@@ -141,5 +142,3 @@ function updateTime() {
         setTimeout(updateTime,1000);
     }
 }
-
-setTimeout(updateTime,1000);
