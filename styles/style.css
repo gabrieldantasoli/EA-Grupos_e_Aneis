@@ -4,13 +4,7 @@
 :root{
     --black: #000;
     --white: #fff;
-    --red: #f25c5c86;
-    --darkRed: #d83f3f85;
-    --green: #5fbf32b6;
-    --darkGreen: #53af25b7;
-    --yellow: #ffc850b0;
-    --darkYellow: #feb744ab;
-    --gamemode: ;
+    --gamemode: #f25c5c;
 }
 
 *{
@@ -24,7 +18,6 @@
     text-decoration: none;
     text-align: center;
 }
-
 html,body{
     overflow-x: none;
 }
@@ -45,7 +38,9 @@ main{
     width: 100%;
     padding: 1.5rem;
 }
+
 /* estilo do header começa aqui */
+
 header{
     display: flex;
     justify-content: space-between;
@@ -53,8 +48,7 @@ header{
     width: 100%;
     background-color: var(--white);
     padding: 0.5rem 3rem;
-    box-shadow: 0 2px 2px var(--red), 0 5px 5px var(--red), 0 10px 10px var(--red);
-    animation: shadow infinite 21s ease-in-out;
+    box-shadow: 0 2px 2px var(--gamemode), 0 5px 5px var(--gamemode), 0 10px 10px var(--gamemode);
 }
 header #logo{
     display: flex;
@@ -68,88 +62,43 @@ header img{
     width: 40%;
     max-width: 50px;
 }
-
+header button{
+    display: none;
+}
 header nav{
     display: flex;
     gap: 3rem;
 }
-header nav a{
+header nav a,header button{
+    background-color: transparent;
     font-size: large;
     position: relative;
     z-index: 1;
 }
-header nav a::before{
+header nav a::before,header button::before{
     content: "";
     position: absolute;
     bottom: 0;left: 0;
     width: 100%;
     height: 3px;
-    background-color: var(--green);
+    background-color: var(--gamemode);
     animation: link 21s ease-in-out infinite;
     z-index: 0;
     opacity: 0;
 }
-header nav a:hover:before{
+header nav a:hover:before,header button:hover:before{
     opacity: 1;
 }
 
-
-@keyframes link{
-    0%{
-        background-color: #f25c5c;
-    }
-    16.7%{
-        background-color: #d83f3f;
-    }
-    33.3%{
-        background-color: #5fbf32;
-    }
-    50%{
-        background-color: #53af25;
-    }
-    67.7%{
-        background-color: #ffc850;
-    }
-    83.5%{
-        background-color: #ffc850;
-    }
-    100%{
-        background-color: #f25c5c;
-    }
-}
-@keyframes shadow {
-    0%{
-        box-shadow: 0 2px 2px var(--red), 0 5px 5px var(--red), 0 10px 10px var(--red);
-    }
-    16.7%{
-        box-shadow: 0 2px 2px var(--darkRed), 0 5px 5px var(--darkRed), 0 10px 10px var(--darkRed);
-    }
-    33.3%{
-        box-shadow: 0 2px 2px var(--green), 0 5px 5px var(--green), 0 10px 10px var(--green);
-    }
-    50%{
-        box-shadow: 0 2px 2px var(--darkGreen), 0 5px 5px var(--darkGreen), 0 10px 10px var(--darkGreen);
-    }
-    67.7%{
-        box-shadow: 0 2px 2px var(--yellow), 0 5px 5px var(--yellow), 0 10px 10px var(--yellow);
-    }
-    83.5%{
-        box-shadow: 0 2px 2px var(--darkYellow), 0 5px 5px var(--darkYellow), 0 10px 10px var(--darkYellow);
-    }
-    100%{
-        box-shadow: 0 2px 2px var(--red), 0 5px 5px var(--red), 0 10px 10px var(--red);
-    }
-}
-
-@media (max-width: 600px){
+@media (max-width: 700px){
     header{
         padding: 0.5rem 1rem;
     }
     header nav{
-        gap: 0.6rem;
+        gap: 0.9rem;
     }
 }
-@media (max-width: 500px){
+@media (max-width: 550px){
     header{
         flex-direction: column;
     }
@@ -158,9 +107,16 @@ header nav a:hover:before{
         margin-top: 0.5rem;
     }
 }
+@media (max-width: 400px){
+    header nav{
+        gap: 0.7rem;
+    }
+}
+
 /* estilo do header termina aqui */ 
 
 /* estilo do gamemode começa aqui */
+
 #game,label div,button{
     transition: 1s;
 }
@@ -185,6 +141,15 @@ header nav a:hover:before{
 }
 #gameContainer,.pointsp1,.pointsp2{
     display: none;
+}
+#game{
+    display: none;
+    position: relative;
+    border: 3px solid var(--gamemode);
+    padding: 1rem;
+    transition: 1s;
+    border-radius: 25px;
+    animation: changeColor 21s infinite ease-in-out;
 }
 .game{
     width: calc(100% + 2px);
@@ -225,29 +190,6 @@ input[type="radio"]:checked ~ label div{
 }
 
 
-@keyframes gamemodeColor {
-    0%{
-        --gamemode: #f25c5c;
-    }
-    16.7%{
-        --gamemode: #d83f3f;
-    }
-    33.3%{
-        --gamemode: #5fbf32;
-    }
-    50%{
-        --gamemode: #53af25;
-    }
-    66.7%{
-        --gamemode: #ffc850;
-    }
-    83.7%{
-        --gamemode: #feb744;    
-    }
-    100%{
-        --gamemode: #f25c5c;
-    }
-}
 
 /* estilo do gamemode termina aqui */
 
@@ -305,40 +247,6 @@ input[type="radio"]:checked ~ label div{
 }
 #menu img.active{
     opacity: 1;
-}
-
-#game{
-    opacity: 0;
-    position: relative;
-    border: 3px solid #f25c5c;
-    padding: 1rem;
-    transition: 1s;
-    border-radius: 25px;
-    animation: changeColor 21s infinite ease-in-out;
-}
-
-@keyframes changeColor {
-    0%{
-        border: 3px solid #f25c5c;
-    }
-    16.7%{
-        border: 3px solid #d83f3f;
-    }
-    33.3%{
-        border: 3px solid #5fbf32;
-    }
-    50%{
-        border: 3px solid #53af25;
-    }
-    66.7%{
-        border: 3px solid #ffc850;
-    }
-    83.7%{
-        border: 3px solid #feb744;
-    }
-    100%{
-        border: 3px solid #f25c5c;   
-    }
 }
 
 /* estilo da tabela e menu termina aqui */

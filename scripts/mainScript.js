@@ -10,7 +10,8 @@ function setTable(){
     document.querySelector("#gameOptions").style.display = "none";
     document.querySelector("#tabela").style.display = "block";
     document.querySelector("#menu").style.display = "flex";
-    document.querySelector("#game").style.opacity = 1;
+    document.querySelector("#game").style.display = "block";
+    document.querySelector("header button").style.display = "block";
 
 
     let tamanho = document.querySelector(".gamedificulty input[type='radio']:checked").getAttribute("data-number");

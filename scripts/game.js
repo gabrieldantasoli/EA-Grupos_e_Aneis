@@ -56,9 +56,12 @@ function checkMove(x, y){
     }
 
     fillSquare(x, y);
-    playSucessSong()
+    playSucessSong();
     toDiscover--;
-    if(toDiscover == 0) playWindSound()
+    if(toDiscover == 0) {
+        playWindSound();
+        fixTable();
+    }
 }
 
 function fillSquare(x, y){
@@ -90,4 +93,9 @@ function playWindSound(){
     let winSong = new Audio();
     winSong.src = './audios/ganhou.mp3'
     winSong.play()
+}
+
+function fixTable() {
+    let size = document.querySelectorAll("#tabela > div").length;
+    alert(size)
 }
