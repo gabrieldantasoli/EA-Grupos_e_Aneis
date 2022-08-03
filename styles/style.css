@@ -182,7 +182,7 @@ header nav a:hover:before{
 }
 .game{
     width: calc(100% + 2px);
-    background-color: var(--gamemode);
+    background: var(--gamemode);
     color: var(--black);
     font-size: 3em;
     padding: 1rem 0;
