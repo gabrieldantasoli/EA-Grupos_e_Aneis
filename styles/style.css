@@ -251,12 +251,18 @@ input[type="radio"]:checked ~ label div{
 }
 #lifes{
     display: none;
-    width: 150px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
     margin-bottom: 1rem;
+}
+#lifes > div:nth-child(1){
+    width: 150px;
     height: 30px;
     position: relative;
 }
-#lifes::before{
+#lifes > div:nth-child(1):before{
     content: "";
     position: absolute;
     left: 0;bottom: -0.15rem;
@@ -264,12 +270,35 @@ input[type="radio"]:checked ~ label div{
     height: 4px;
     background-color: var(--gamemode);
 }
-#lifes img{
+#lifes > div:nth-child(1) img{
     border-radius: 50%;
     filter: invert(0) ;
     width: 25px;
     background-color: var(--gamemode);
     pointer-events: none;
+}
+.time,#lifes > div:nth-child(3){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.35rem;
+}
+#lifes > div:nth-child(3) img{
+    width: 30px;
+    height: 30px;
+}
+#lifes > div:nth-child(3) p{
+    font-size: 2em;
+}
+#lifes > div:nth-child(2),#lifes > div:nth-child(3){
+    width: 100px;
+}
+#lifes > div:nth-child(2) img{
+    width: 35px;
+    height: 35px;
+}
+#lifes > div:nth-child(2) p{
+    font-size: 1.5em; 
 }
 
 /* estilo da tabela e menu termina aqui */

@@ -18,7 +18,9 @@ function setTable(){
     if (gamemode == "dinamico") {
         document.body.classList.add("dinamico");
     }
-    if (document.body.classList[0] == "dinamico") document.querySelector("#lifes").style.display = "block";
+    if (document.body.classList[0] != "dinamico") document.querySelector("#lifes > div:nth-child(1)").style.display = "none";
+    if (document.body.classList[0] == "dinamico") document.querySelector("#lifes > div:nth-child(3)").style.display = "none";
+    document.querySelector("#lifes").style.display = "flex";
 
     let tamanho = document.querySelector(".gamedificulty input[type='radio']:checked").getAttribute("data-number");
     let size = 100 / tamanho;
