@@ -317,3 +317,25 @@ footer p{
     color: var(--white);
 }
 /* estilo do footer termina aqui */
+
+main > div::before{
+    background-color: var(--gamemode);
+}
+#gamemodes h3{
+    background-color: var(--gamemode);
+    padding: 0.5rem 0;
+}
+
+#dfc{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+#dfc img{
+    width: 80%;
+    max-width: 200px;
+}

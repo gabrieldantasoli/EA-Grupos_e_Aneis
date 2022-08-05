@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/HTP.css">
     <link rel="stylesheet" href="styles/style.css">
     <title>Minigame - estruturas algébricas</title>
 </head>
@@ -15,12 +16,67 @@
             <p>Fruit Alchemist</p>
         </div>
         <nav>
+            <button>Home</button>
             <a target="_blank" rel="noFollow" href="https://github.com/gabrieldantasoli/EA-Grupos_e_Aneis">Projeto do jogo</a>
-        </nav>
-
-        
+        </nav> 
     </header>
 
+    <main>
+        <div class="intro">
+            <img src="images/logo.png" alt="">
+            <h1>Fruit Alchemist</h1>
+        </div>
+
+        <div id="about">
+            <h2>Sobre O Jogo</h2>
+            <p>Fruit Alchemist é um Minigame desenvolvido para a disciplina de FMCC II da Universidade Federal de Campina Grande. O objetivo do jogo consiste em estimular o raciocínio lógico do jogador por meio do uso da Tabela de Cayley (que , por padrão , já é iniciada com 50% preenchida - visando tornar o jogo mais fácil para usuários que não conhecem estruturas algébricas). Para fins lúdicos, os símbolos ou números matemáticos são representados por meio de imagens de frutas e o jogador não precisa ter conhecimentos prévios para conseguir completar a tabela.</p>
+        </div>
+
+        <div id="howToPlay">
+            <h2>Como jogar</h2>
+        <p>O jogador deve visualizar os elementos preenchidos incialmente na tabela e montar uma linha de raciocínio para tentar descobrir a fórmula de combinação das frutas e , assim , completar a tabela. A partir disso , selecione uma fruta da "CAIXA" abaixo da tabela e clique na posição da tabela em que achar que a fruta seria posicionada de forma correta. Ao finalisar um jogo , a tabela é competada altomaticamente - marcando os elementos acertados de verde e os errados de vermelho. Para jogar novamente , recarregue a página ou clique em "Home" .<br> Dica: Como os grupos são comultativos , os elementos da tabela são simétricos em relação à diagonal principal. </p>
+            <div id="images">
+                <img src="images/maca.png" alt=""> 
+                +
+                <img src="images/cereja.png" alt="">
+                =
+                <img src="images/macaVerde.png" alt="">
+            </div>
+        </div>
+
+        <div id="gamemodes">
+            <h2>Modos De Jogo</h2>
+            <h3>Modo Estático :</h3>
+            <p>O modo estático possui vidas ilimitadas , isto é , o jogador pode preencher a tabela sem se preocupar com os erros . Indicamos esse modo para jogadores iniciantes, já que o raciocínio lógico pode ser aperfeiçoado com os erros e acertos.</p>
+            <p>Esse modo possui um cronômetro (Que marca o tempo até completar a tabela) e um contador de erros (Que marca quantas vezes o jogador errou).</p>
+            <img src="images/est_score.png" alt="">
+            <p>RECOMENDAÇÂO : A cada rodada , tente reduzir a sua quantidade de erros e seu tempo total de jogo . Se você é iniciante , comece na tabela 4X4 e , quando se sentir confiante , aumente o tamanho da tabela. Após jogar algumas partidas no modo estático, tente jogar no modo dinâmico.
+            </p>
+            <h3>Modo Dinâmico :</h3>
+            <p>O modo dinâmco é bem similar ao estático, mas o jogador possui apenas 5 vidas para completar toda a tabela.</p>
+            <img src="images/din_score.png" alt="">
+            <p>Esse modo também possui um cronômetro (Que marca o tempo até completar a tabela) e um marcador de vidas (Que mostra suas vidas restantes).</p>
+            <p>RECOMENDAÇÂO : A cada rodada , tente reduzir o seu tempo total de jogo e completar a tabela perdendo o mínimo de vidas. Comece na tabela 4X4 e , quando se sentir confiante , aumente o tamanho da tabela.
+            </p>
+        </div>
+
+        <div id="dificulty">
+            <h2>Dificuldade</h2>
+            <p>A Dificuldade , em ambos os modos , é marcada pelo tamanho da tabela - que pode ter de 16 até 64 elementos. Veja os exemplos de tabelas abaixo:</p>
+            <div id="dfc">
+                <img src="images/tabela1.png" alt="">
+                <img src="images/tabela2.png" alt="">
+                <img src="images/tabela3.png" alt="">
+                <img src="images/tabela4.png" alt="">
+                <img src="images/tabela5.png" alt="">
+            </div>
+        </div>
+
+        <p>LEMBRE-SE : Esse é um minigame educativo que desafia o jogador a usar o raciocínio lógico . Não complete a tabela chutando a posição das frutas , mas sim , pense antes de jogar.</p>
+    </main>
+
     
+
+    <script src="../scripts/windowEvents.js"></script>
 </body>
 </html>

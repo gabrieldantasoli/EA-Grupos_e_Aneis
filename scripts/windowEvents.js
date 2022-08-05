@@ -21,8 +21,6 @@ function changeColor() {
 }
 setTimeout(changeColor,3500);
 
-
-
 document.querySelector("header button").addEventListener("click",() => {
     window.location.href = "index.html";
 })
